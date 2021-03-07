@@ -1,8 +1,13 @@
-# garden-app
+# Garden App
 
 ## Project setup
 ```
 yarn install
+```
+### Start Mock API Server
+Lives on port 5000
+```
+yarn json
 ```
 
 ### Compiles and hot-reloads for development

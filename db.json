@@ -1,0 +1,44 @@
+{
+    "plants":[ 
+        {
+            "id": 1,
+            "name": "Broccoli",
+            "edible": true,
+            "weed": false,
+            "sun": "Part Shade",
+            "description": ""
+        },
+        {
+            "id": 2, 
+            "name": "Tomato",
+            "edible": true,
+            "weed": false,
+            "sun": "Full Sun",
+            "description": ""
+        },
+        {
+            "id": 3,
+            "name": "Pepper",
+            "edible": true,
+            "weed": false,
+            "sun":"Full Sun",
+            "description": ""
+        },
+        {
+            "id": 4,
+            "name": "Carolina Horsenettle",
+            "edible": false,
+            "weed": true,
+            "sun": "Full to Part Sun",
+            "description": ""
+        },
+        {
+            "id": 5,
+            "name": "Foxglove",
+            "edible": false,
+            "weed": false,
+            "sun": "Full to Part Sun",
+            "description": ""
+        }
+    ]
+}
