@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div :key="plant.id" v-for="plant in plants">
-      <Plant 
-        @edit-plant ="$emit('edit-plant', plant.id)"
+      <Plant
+        @edit-plant="$emit('edit-plant', plant.id)"
         @delete-plant="$emit('delete-plant', plant.id)"
-        :plant="plant" 
+        :plant="plant"
       />
     </div>
   </div>
@@ -21,12 +21,13 @@ export default {
   components: {
     Plant
   },
-  emits: ['edit-plant', 'delete-plant'],
+  emits: ["edit-plant", "delete-plant"]
 };
 </script>
 
 <style scoped>
 .container {
   border: red solid 3px;
+  align-items: center;
 }
 </style>

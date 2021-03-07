@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <AddPlant @add-plant="addPlant" />
+    <!-- to do: toggle -->
     <Plantlist @delete-plant="deletePlant" :plants="plants" />
   </div>
 </template>
@@ -33,15 +34,17 @@ export default {
       this.plants = [...this.plants, data];
     },
 
-    async deletePlant(id){
-      if (confirm ('Are you sure?')){
-        const res = await fetch (`api/plants/${id}`, {
-          method: 'DELETE'
-          })
-          res.status === 200 ?( this.plants = this.plants.filter((plant) => plant.id !== id)) : alert('Error Deleting')
+    async deletePlant(id) {
+      if (confirm("Are you sure?")) {
+        const res = await fetch(`api/plants/${id}`, {
+          method: "DELETE"
+        });
+        res.status === 200
+          ? (this.plants = this.plants.filter(plant => plant.id !== id))
+          : alert("Error Deleting");
       }
     },
-   /* async editPlant(id){
+    /* async editPlant(id){
 
     }, */
     async fetchPlantList() {
@@ -54,9 +57,9 @@ export default {
       const data = await res.json();
       return data;
     },
+  },
     async created() {
-      this.plants = await this.fetchPlantList();
-    }
+    this.plants = await this.fetchPlantList()
   }
 };
 </script>

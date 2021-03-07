@@ -7,10 +7,20 @@
 
     <div class="radio-group">
       <p>Is it a weed?</p>
-      <input type="radio" :value="true" v-model="weed" @click="additionalInfo = false" />
+      <input
+        type="radio"
+        :value="true"
+        v-model="weed"
+        @click="additionalInfo = false"
+      />
       <label>Yes</label>
       <br />
-      <input type="radio" :value="false" v-model="weed" @click="additionalInfo = true"/>
+      <input
+        type="radio"
+        :value="false"
+        v-model="weed"
+        @click="additionalInfo = true"
+      />
       <label>No</label>
     </div>
 
