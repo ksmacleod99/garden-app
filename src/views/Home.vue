@@ -44,9 +44,23 @@ export default {
           : alert("Error Deleting");
       }
     },
-    /* async editPlant(id){
+    async editPlant(id){
+        const plantToEdit = await this.fetchPlant(id)
+        const updPlant = {...plantToEdit, name: !plantToEdit.name}
 
-    }, */
+        const res = await fetch(`api/plants/${id}`, {
+          method: 'PUT',
+          headers:{
+            'Content-type': 'application/json',
+            },
+            body: JSON.stringify(updPlant),
+        })
+
+        const data = await res.json()
+
+        this.plants = this.plants.map((plant) => plant.id === id ? {...plant , name: data.name } : plant
+        )
+    },
     async fetchPlantList() {
       const res = await fetch("api/plants");
       const data = await res.json();
@@ -56,10 +70,10 @@ export default {
       const res = await fetch(`/api/plants/${id}`);
       const data = await res.json();
       return data;
-    },
+    }
   },
-    async created() {
-    this.plants = await this.fetchPlantList()
+  async created() {
+    this.plants = await this.fetchPlantList();
   }
 };
 </script>
